@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Kiwi.Paysystem.lib;
 
 namespace Kiwi.Paysystem
 {
@@ -24,18 +25,20 @@ namespace Kiwi.Paysystem
         {
             InitializeComponent();
 
-            List<Operator> operators = new List<Operator>();
-            operators.Add(new Operator()
-            {
-                OperatorId = 1,
-                Prefix = "+7 777",
-                Logo = "https://beeline.kz/binaries/content/gallery/mainsite/app-logo.jpg",
-                Name = "Beeline",
-                Percent = 0.5
-            });
+            //List<Operator> operators = new List<Operator>();
+            //operators.Add(new Operator()
+            //{
+            //    OperatorId = 1,
+            //    Prefix = "+7 777",
+            //    Logo = "https://beeline.kz/binaries/content/gallery/mainsite/app-logo.jpg",
+            //    Name = "Beeline",
+            //    Percent = 0.5
+            //});
 
             // lvOperatorList.Items.Add(operators);
-            lvOperatorList.ItemsSource = operators;
+            OperatorService operatorService = new OperatorService();
+
+            lvOperatorList.ItemsSource = operatorService.GetOperators();
 
             //WrapPanel wp = new WrapPanel();
             //wp.Children.Add(new Label() { Content="+7 777"});
@@ -49,7 +52,7 @@ namespace Kiwi.Paysystem
 
         private void btnEditData_Click(object sender, RoutedEventArgs e)
         {
-            Operator data = (Operator)lvOperatorList.SelectedItem;
+            Operators data = (Operators)lvOperatorList.SelectedItem;
         }
 
     }

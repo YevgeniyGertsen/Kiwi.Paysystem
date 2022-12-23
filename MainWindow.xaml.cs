@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Kiwi.Paysystem.lib;
 
 namespace Kiwi.Paysystem
 {
@@ -40,11 +41,22 @@ namespace Kiwi.Paysystem
 
 
             //do ...
+            UserService userService = new UserService();
+            if(userService.CheckUser(login, password))
+            {
+                MainAuthWindow mainAuth = new MainAuthWindow();
+                mainAuth.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Логин или пароль неправильный");
+            }
 
-            MainAuthWindow mainAuth = new MainAuthWindow();
-            mainAuth.Show();
 
-            this.Close();
+            
+
+            
         }
     }
 }

@@ -40,12 +40,5 @@ namespace Kiwi.Paysystem
 
         }
     }
-    public class Operator
-    {
-        public int OperatorId { get; set; }
-        public string Prefix { get; set; }
-        public string Logo { get; set; }
-        public string Name { get; set; }
-        public double Percent { get; set; }
-    }
+  
 }
