@@ -25,34 +25,21 @@ namespace Kiwi.Paysystem
         {
             InitializeComponent();
 
-            //List<Operator> operators = new List<Operator>();
-            //operators.Add(new Operator()
-            //{
-            //    OperatorId = 1,
-            //    Prefix = "+7 777",
-            //    Logo = "https://beeline.kz/binaries/content/gallery/mainsite/app-logo.jpg",
-            //    Name = "Beeline",
-            //    Percent = 0.5
-            //});
-
-            // lvOperatorList.Items.Add(operators);
             OperatorService operatorService = new OperatorService();
-
             lvOperatorList.ItemsSource = operatorService.GetOperators();
-
-            //WrapPanel wp = new WrapPanel();
-            //wp.Children.Add(new Label() { Content="+7 777"});
-            //wp.Children.Add(new Label() { Content = "logo" });
-            //wp.Children.Add(new Label() { Content = "Beeline" });
-            //wp.Children.Add(new Label() { Content = "0.5%" });
-
-            //lbxOperatorList.Items.Add(wp);
-            //lbxOperatorList.Items.Add("test");
         }
 
         private void btnEditData_Click(object sender, RoutedEventArgs e)
         {
             Operators data = (Operators)lvOperatorList.SelectedItem;
+
+            _pageAddOperator pad = new _pageAddOperator(data);
+
+            MainAuthWindow._frameMain.Navigate(pad);
+            
+            //= 
+            //    new Uri("_pageAddOperator.xaml",
+            //    UriKind.RelativeOrAbsolute);
         }
 
     }

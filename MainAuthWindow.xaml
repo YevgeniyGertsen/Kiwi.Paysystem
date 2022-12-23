@@ -17,7 +17,7 @@
                 <MenuItem Header="Add Operator"
                           x:Name="miAddOperatorList" 
                           Click="miAddOperatorList_Click"
-                          IsEnabled="False"></MenuItem>
+                          IsEnabled="True"></MenuItem>
                 <Separator></Separator>
                 <MenuItem Header="Close"
                           x:Name="miClose"

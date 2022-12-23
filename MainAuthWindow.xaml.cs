@@ -19,9 +19,12 @@ namespace Kiwi.Paysystem
     /// </summary>
     public partial class MainAuthWindow : Window
     {
+        public static Frame _frameMain;
+
         public MainAuthWindow()
         {
-            InitializeComponent();           
+            InitializeComponent();
+            _frameMain = frameMain;
         }
       
         private void miOperatorList_Click(object sender, RoutedEventArgs e)
@@ -37,7 +40,8 @@ namespace Kiwi.Paysystem
 
         private void miAddOperatorList_Click(object sender, RoutedEventArgs e)
         {
-
+            frameMain.Source = new Uri("_pageAddOperator.xaml",
+                UriKind.RelativeOrAbsolute);
         }
     }
   
