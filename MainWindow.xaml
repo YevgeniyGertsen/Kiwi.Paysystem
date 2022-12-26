@@ -57,7 +57,7 @@
 
 
         <Button x:Name="btnAuth" Grid.Row="5" Grid.Column="2" Width="150" Height="25"
-                Click="btnAuth_Click" >Войти</Button>
+                Click="btnAuth_Click" IsDefault="True">Войти</Button>
 
     </Grid>    
 </Window>

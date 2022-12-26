@@ -22,10 +22,12 @@ namespace Kiwi.Paysystem
     {
         private Operators _operators { get; set; }
         private OperatorService _operatorService { get; set; }
-        public _pageAddOperator() :this(null)
-        {
 
+
+        public _pageAddOperator() : this(null)
+        {
         }
+
         public _pageAddOperator(Operators operators)
         {
             InitializeComponent();
@@ -36,6 +38,7 @@ namespace Kiwi.Paysystem
             else
             {
                 btnAdd.Content = "Edit";
+                tbxId.Text = operators.Id.ToString();
                 tbxLogo.Text = operators.Logo;
                 tbxName.Text = operators.Name;
                 tbxPhone.Text = operators.Phone;
@@ -43,19 +46,44 @@ namespace Kiwi.Paysystem
             }
 
             _operators = operators;
+            _operatorService = new OperatorService();
         }
-        
+
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            if(_operators == null)
+            if (_operators == null)
             {
                 Operators op = new Operators();
                 op.Logo = tbxLogo.Text;
-                op.Name = tbxLogo.Text;
+                op.Name = tbxName.Text;
                 op.Phone = tbxPhone.Text;
                 op.Precent = Convert.ToDouble(tbxPrecent.Text);
-                op.CreateDate = (DateTime)dpCreateDate.SelectedDate;
-                if(_operatorService.AddOperator(op))
+
+                if (dpCreateDate.SelectedDate == null)
+                    dpCreateDate.SelectedDate = DateTime.Now;
+                else
+                    op.CreateDate = (DateTime)dpCreateDate.SelectedDate;
+
+                if (_operatorService.AddOperator(op))
+                    MessageBox.Show("Added");
+                else
+                    MessageBox.Show("Error");
+            }
+            else
+            {
+                Operators op = new Operators();
+                op.Id = _operators.Id;//NEW
+                op.Logo = tbxLogo.Text;
+                op.Name = tbxName.Text;
+                op.Phone = tbxPhone.Text;
+                op.Precent = Convert.ToDouble(tbxPrecent.Text);
+
+                if (dpCreateDate.SelectedDate == null)
+                    dpCreateDate.SelectedDate = DateTime.Now;
+                else
+                    op.CreateDate = (DateTime)dpCreateDate.SelectedDate;
+
+                if (_operatorService.EditOperator(op))
                 {
                     MessageBox.Show("Added");
                 }
@@ -63,10 +91,6 @@ namespace Kiwi.Paysystem
                 {
                     MessageBox.Show("Error");
                 }
-            }
-            else
-            {
-               
             }
 
             pageOperatorList pad = new pageOperatorList();

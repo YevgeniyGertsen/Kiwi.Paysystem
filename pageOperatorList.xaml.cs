@@ -32,7 +32,6 @@ namespace Kiwi.Paysystem
         private void btnEditData_Click(object sender, RoutedEventArgs e)
         {
             Operators data = (Operators)lvOperatorList.SelectedItem;
-
             _pageAddOperator pad = new _pageAddOperator(data);
 
             MainAuthWindow._frameMain.Navigate(pad);

@@ -28,7 +28,7 @@
         <Label DockPanel.Dock="Bottom">Bottom</Label>
 
         <StackPanel>
-            <Frame x:Name="frameMain"/>
+            <Frame x:Name="frameMain" NavigationUIVisibility="Hidden"/>
         </StackPanel>
        
         
