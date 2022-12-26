@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kiwi.Paysystem", "Kiwi.Pays
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kiwi.Paysystem.lib", "..\Kiwi.Paysystem.lib\Kiwi.Paysystem.lib.csproj", "{F3C43218-7A6E-4542-8B30-A719CA5CE3E1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kiwi.PaySystem.Listhener", "..\Kiwi.PaySystem.Listhener\Kiwi.PaySystem.Listhener.csproj", "{21278A52-EE34-4946-9002-5D225FB316F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kiwi.PaySystem.Listener2.0", "..\Kiwi.PaySystem.Listener2.0\Kiwi.PaySystem.Listener2.0.csproj", "{3923C874-FEBE-4F86-94E3-2624039FA9A1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{F3C43218-7A6E-4542-8B30-A719CA5CE3E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3C43218-7A6E-4542-8B30-A719CA5CE3E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3C43218-7A6E-4542-8B30-A719CA5CE3E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21278A52-EE34-4946-9002-5D225FB316F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21278A52-EE34-4946-9002-5D225FB316F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21278A52-EE34-4946-9002-5D225FB316F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21278A52-EE34-4946-9002-5D225FB316F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3923C874-FEBE-4F86-94E3-2624039FA9A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3923C874-FEBE-4F86-94E3-2624039FA9A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3923C874-FEBE-4F86-94E3-2624039FA9A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3923C874-FEBE-4F86-94E3-2624039FA9A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
